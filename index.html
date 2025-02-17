@@ -114,150 +114,85 @@
         </ul>
       </div>
     </section>
+ 
 
-    <!-- Fiestas de Badajoz -->
-    <section id="fiestas-badajoz" class="services">
-      <h2>Fiestas más importantes de Badajoz</h2>
-      <div class="services-container">
-        <div class="service">
-          <i class="fas fa-calendar-alt"></i>
-          <h3>Carnaval de Badajoz</h3>
-          <p>Uno de los carnavales más famosos de España, lleno de color, música y disfraces.</p>
+<!-- Fiestas de Badajoz -->
+    <section id="fiestas-badajoz" class="festivities">
+      <h2>Fiestas de Badajoz</h2>
+      <div class="festivities-container">
+        <div class="festivity">
+          <a href="https://carnavaldebadajoz.org/" target="_blank">
+            <img src="imagenes/carnaval.jpg" alt="Carnaval de Badajoz">
+            <h3>Carnaval de Badajoz</h3>
+          </a>
         </div>
-        <div class="service">
-          <i class="fas fa-church"></i>
-          <h3>Semana Santa</h3>
-          <p>Celebraciones religiosas con procesiones y eventos tradicionales.</p>
+        <div class="festivity">
+          <a href="https://turismoapps.dip-badajoz.es/evento/semana-santa-de-badajoz-2025" target="_blank">
+            <img src="imagenes/semana-santa.jpg" alt="Semana Santa de Badajoz">
+            <h3>Semana Santa</h3>
+          </a>
         </div>
-        <div class="service">
-          <i class="fas fa-firework"></i>
-          <h3>Feria de San Juan</h3>
-          <p>Feria con atracciones, conciertos y eventos para todas las edades.</p>
+        <div class="festivity">
+          <a href="https://www.cuandopasa.com/index.php?v=v54325b" target="_blank">
+            <img src="imagenes/feria.jpg" alt="Feria de Badajoz">
+            <h3>Feria de Badajoz</h3>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Galería -->
+    <!-- Galería de Imágenes -->
     <section id="galeria" class="gallery">
-      <h2>Galería de Fotos</h2>
+      <h2>Galería</h2>
       <div class="gallery-container">
-        <img src="imagenes/casa1.jpg" alt="Casa 1" onclick="openModal(this.src)">
-        <img src="imagenes/casa2.jpg" alt="Casa 2" onclick="openModal(this.src)">
-        <img src="imagenes/casa3.jpg" alt="Casa 3" onclick="openModal(this.src)">
-        <img src="imagenes/casa4.jpg" alt="Casa 4" onclick="openModal(this.src)">
-        <img src="imagenes/casa5.jpg" alt="Casa 5" onclick="openModal(this.src)">
-        <img src="imagenes/casa6.jpg" alt="Casa 6" onclick="openModal(this.src)">
+        <img src="imagenes/casa1.jpg" alt="Casa 1" class="gallery-img">
+        <img src="imagenes/casa2.jpg" alt="Casa 2" class="gallery-img">
+        <img src="imagenes/casa3.jpg" alt="Casa 3" class="gallery-img">
+        <img src="imagenes/casa4.jpg" alt="Casa 4" class="gallery-img">
+        <img src="imagenes/casa5.jpg" alt="Casa 5" class="gallery-img">
+        <img src="imagenes/casa6.jpg" alt="Casa 6" class="gallery-img">
+      </div>
+      <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
       </div>
     </section>
 
-    <!-- Ubicación -->
-    <section id="ubicacion" class="location">
-      <h2>Ubicación</h2>
-      <div class="location-container">
-        <iframe title="Ubicación de La Casa de Eva" 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3073.297413815047!2d-6.970754523465343!3d38.87837737164359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd16f7b1a69c8b9d%3A0x4cd47999aa12a98d!2sC.%20la%20Bomba%2C%208%2C%2006002%20Badajoz%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1710187650341!5m2!1ses!2ses" 
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <p>Estamos ubicados en un lugar privilegiado, cerca de los principales puntos de interés. ¡Ven a descubrirlo!</p>
-      </div>
-    </section>
+    <!-- Reserva y Pago -->
+    <section id="reservas" class="reservation">
+      <h2>Reserva tu Estancia</h2>
+      <form id="reservation-form">
+        <label for="check-in">Fecha de Entrada:</label>
+        <input type="date" id="check-in" required>
 
-    <!-- Reservas -->
-    <section id="reservas" class="reservas">
-      <h2>Reservas</h2>
-      <div class="reservas-container">
-        <form id="booking-form">
-          <div class="form-group">
-            <label for="checkin">Fecha de Llegada:</label>
-            <input type="date" id="checkin" name="checkin" required>
-          </div>
-          <div class="form-group">
-            <label for="checkout">Fecha de Salida:</label>
-            <input type="date" id="checkout" name="checkout" required>
-          </div>
-          <div class="form-group">
-            <label for="adults">Adultos:</label>
-            <input type="number" id="adults" name="adults" min="1" max="4" value="1">
-          </div>
-          <div class="form-group">
-            <label for="children">Niños:</label>
-            <input type="number" id="children" name="children" min="0" max="3" value="0">
-          </div>
-          <button type="submit" class="button">Ver Disponibilidad</button>
-        </form>
-      </div>
+        <label for="check-out">Fecha de Salida:</label>
+        <input type="date" id="check-out" required>
+
+        <button type="button" id="calculate">Calcular Precio</button>
+        <p id="price"></p>
+
+        <button type="button" id="pay-button">Pagar Ahora</button>
+      </form>
     </section>
 
     <!-- Contacto -->
     <section id="contacto" class="contact">
       <h2>Contacto</h2>
-      <div class="contact-container">
-        <form action="https://formspree.io/f/xldgolna" method="POST">
-  <input type="hidden" name="_next" value="http://example.com/thankyou.html">
-  <input type="hidden" name="_subject" value="New submission!">
-  <input type="hidden" name="_cc" value="pedrocordobez@hotmail.com">
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="button">Enviar Mensaje</button>
-        </form>
-      </div>
-    </section>
+      <form action="https://formspree.io/f/xldgolna" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
 
-    <!-- Sección de Reseñas y Testimonios -->
-    <section id="testimonios" class="testimonios">
-      <h2>Reseñas y Testimonios</h2>
-      <div class="testimonios-container">
-        <div class="testimonial">
-          <p>"La experiencia en La Casa de Eva fue inolvidable. El servicio y la atención fueron excepcionales."</p>
-          <h3>- María Pérez</h3>
-        </div>
-        <div class="testimonial">
-          <p>"Un lugar encantador, perfecto para relajarse y disfrutar de unas vacaciones únicas. ¡Altamente recomendado!"</p>
-          <h3>- Juan García</h3>
-        </div>
-        <div class="testimonial">
-          <p>"Todo estaba impecable y el ambiente te hace sentir como en casa. Sin duda volveré."</p>
-          <h3>- Ana Rodríguez</h3>
-        </div>
-      </div>
-    </section>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="_replyto" required>
 
-    <!-- Sección de Video Interactivo -->
-    <section id="video-interactivo" class="video-interactivo">
-      <h2>Tour Virtual Interactivo</h2>
-      <div class="video-container">
-        <video id="tourVideo" controls>
-          <source src="path/to/your-video.mp4" type="video/mp4">
-          Tu navegador no soporta videos HTML5.
-        </video>
-        <div class="video-overlay">
-          <button onclick="window.location.href='#reservas'" class="button">¡Reserva Ahora!</button>
-        </div>
-      </div>
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
     </section>
 
   </main>
-
-  <footer>
-    <p>&copy; 2024 La Casa de Eva. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Modal para imágenes -->
-  <div id="imageModal" class="image-modal">
-    <div class="image-modal-content">
-      <button class="close" aria-label="Cerrar" onclick="closeModal()">&times;</button>
-      <img id="modalImage" src="" alt="Imagen ampliada">
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
