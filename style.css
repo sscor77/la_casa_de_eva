@@ -1,4 +1,4 @@
-/* Estilos Generales */
+/* Reset básico y estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -10,20 +10,25 @@ body {
   background: #f8f9fa;
   color: #333;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
 /* Header */
 header {
   background: #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
   height: 60px;
+  width: auto;
 }
 
-/* Hero */
+/* Sección Hero */
 .hero {
   height: 70vh;
   position: relative;
@@ -32,19 +37,21 @@ header {
 
 .hero-slide {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 1s ease-in-out;
 }
 
 .hero-slide.active {
   opacity: 1;
 }
 
-/* Secciones */
+/* Secciones generales */
 section {
   padding: 4rem 2rem;
 }
@@ -71,7 +78,8 @@ h2 {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .service:hover {
@@ -82,6 +90,7 @@ h2 {
   font-size: 2.5rem;
   color: #3498db;
   margin-bottom: 1rem;
+  display: block;
 }
 
 /* Galería */
@@ -99,7 +108,7 @@ h2 {
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .gallery-container img:hover {
@@ -115,7 +124,8 @@ h2 {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.9);
-  z-index: 1000;
+  z-index: 2000;
+  padding: 20px;
 }
 
 .modal-content {
@@ -123,24 +133,30 @@ h2 {
   top: 50%;
   transform: translateY(-50%);
   max-width: 90%;
+  max-height: 90vh;
   margin: 0 auto;
 }
 
 .modal-content img {
   width: 100%;
+  height: auto;
   max-height: 80vh;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .close {
   position: absolute;
   top: -40px;
-  right: 0;
+  right: -10px;
   color: white;
   font-size: 40px;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
+/* Pasarela de pago */
 .payment-modal {
   display: none;
   position: fixed;
@@ -149,7 +165,7 @@ h2 {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-  z-index: 1001;
+  z-index: 2001;
 }
 
 .payment-content {
@@ -170,6 +186,7 @@ h2 {
   margin: 0.5rem 0;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Formularios */
@@ -182,12 +199,19 @@ form {
   margin-bottom: 1.5rem;
 }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52,152,219,0.3);
 }
 
 .button {
@@ -198,7 +222,8 @@ input, textarea {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 .button:hover {
@@ -217,5 +242,28 @@ input, textarea {
   
   .services-container {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  .modal-content {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .button {
+    width: 100%;
   }
 }
