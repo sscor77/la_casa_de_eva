@@ -1,78 +1,77 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Menú Burger
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+document.addEventListener('DOMContentLoaded', () => {
+  // Slider Hero
+  const slides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
   
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('nav-active');
-      // Alterna el atributo aria-expanded
-      const expanded = burger.getAttribute('aria-expanded') === 'true' || false;
-      burger.setAttribute('aria-expanded', !expanded);
-      // Animación para cada enlace
-      navLinks.forEach((link, index) => {
-        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-      });
-      burger.classList.toggle('toggle');
-    });
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
   
-    // Scroll suave para todos los enlaces ancla
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  
-    // Slider de la sección Hero
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
-  
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
-  
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
-    setInterval(nextSlide, 5000);
+  }
   
-    // Funciones para el Modal de imagen
-    window.openModal = function(imageSrc) {
-      const modal = document.getElementById('imageModal');
-      const modalImage = document.getElementById('modalImage');
-      modalImage.src = imageSrc;
-      modal.style.display = "block";
-    };
-  
-    window.closeModal = function() {
-      const modal = document.getElementById('imageModal');
-      modal.style.display = "none";
-    };
-  
-    window.addEventListener('click', function(event) {
-      const modal = document.getElementById('imageModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
-  
-    // Funcionalidad para el video interactivo
-    const tourVideo = document.getElementById('tourVideo');
-    const videoOverlay = document.querySelector('.video-overlay');
-    if (tourVideo) {
-      tourVideo.addEventListener('play', () => {
-        videoOverlay.style.display = 'none';
-      });
-      tourVideo.addEventListener('pause', () => {
-        videoOverlay.style.display = 'flex';
-      });
+  setInterval(nextSlide, 5000);
+  showSlide(0);
+
+  // Modal Imágenes
+  window.openModal = (src) => {
+    document.getElementById('modalImage').src = src;
+    document.getElementById('imageModal').style.display = 'block';
+  };
+
+  window.closeModal = () => {
+    document.getElementById('imageModal').style.display = 'none';
+  };
+
+  // Cálculo de precios
+  const calculatePrice = () => {
+    const checkin = new Date(document.getElementById('checkin').value);
+    const checkout = new Date(document.getElementById('checkout').value);
+    
+    if (!checkin || !checkout || checkin >= checkout) return;
+    
+    let weekdays = 0;
+    let weekends = 0;
+    const current = new Date(checkin);
+    
+    while (current < checkout) {
+      const day = current.getDay();
+      (day >= 1 && day <= 4) ? weekdays++ : weekends++;
+      current.setDate(current.getDate() + 1);
     }
+    
+    document.getElementById('weekdays').textContent = weekdays;
+    document.getElementById('weekends').textContent = weekends;
+    document.getElementById('weekdays-total').textContent = `€${weekdays * 50}`;
+    document.getElementById('weekends-total').textContent = `€${weekends * 100}`;
+    document.getElementById('total-price').textContent = `€${(weekdays * 50) + (weekends * 100)}`;
+  };
+
+  document.getElementById('checkin').addEventListener('change', calculatePrice);
+  document.getElementById('checkout').addEventListener('change', calculatePrice);
+
+  // Procesar pago
+  window.processPayment = () => {
+    alert('¡Reserva confirmada! Recibirás un email de confirmación.');
+    document.getElementById('paymentModal').style.display = 'none';
+    document.getElementById('booking-form').reset();
+  };
+
+  document.getElementById('booking-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('final-price').textContent = 
+      document.getElementById('total-price').textContent.replace('€','');
+    document.getElementById('paymentModal').style.display = 'block';
   });
-  
+
+  // Cerrar modales al hacer clic fuera
+  window.onclick = (e) => {
+    if (e.target.classList.contains('image-modal') || 
+        e.target.classList.contains('payment-modal')) {
+      e.target.style.display = 'none';
+    }
+  };
+});
