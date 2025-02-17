@@ -5,24 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Casa de Eva</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="#" aria-label="Inicio">
+      <a href="#">
         <img src="imagenes/logo.jpg" alt="Logo La Casa de Eva">
       </a>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section con Slider -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
       <div class="hero-slider">
         <div class="hero-slide active" style="background-image: url('imagenes/casa1.jpg');"></div>
@@ -34,80 +30,120 @@
       </div>
     </section>
 
-    <!-- Resto de secciones igual que antes hasta Fiestas de Badajoz -->
-
-    <!-- Fiestas de Badajoz modificado -->
-    <section id="fiestas-badajoz" class="services">
-      <h2>Fiestas más importantes de Badajoz</h2>
-      <div class="services-container">
-        <a href="https://es.wikipedia.org/wiki/Carnaval_de_Badajoz" target="_blank" class="service">
-          <i class="fas fa-calendar-alt"></i>
-          <h3>Carnaval de Badajoz</h3>
-          <p>Uno de los carnavales más famosos de España, lleno de color, música y disfraces.</p>
-        </a>
-        <a href="https://es.wikipedia.org/wiki/Semana_Santa_en_Badajoz" target="_blank" class="service">
-          <i class="fas fa-church"></i>
-          <h3>Semana Santa</h3>
-          <p>Celebraciones religiosas con procesiones y eventos tradicionales.</p>
-        </a>
-        <a href="https://www.turismobadajoz.org/feria-de-san-juan" target="_blank" class="service">
-          <i class="fas fa-fire"></i>
-          <h3>Feria de San Juan</h3>
-          <p>Feria con atracciones, conciertos y eventos para todas las edades.</p>
-        </a>
+    <!-- Sobre Nosotros -->
+    <section id="sobre-nosotros" class="about-us">
+      <div class="about-us-container">
+        <div class="about-us-image">
+          <img src="https://source.unsplash.com/random/800x600?owner" alt="Propietario">
+        </div>
+        <div class="about-us-text">
+          <h2>Sobre Nosotros</h2>
+          <p>Hola, soy [Nombre], y te doy la bienvenida a nuestro alojamiento. Este espacio ha sido creado con cariño para ofrecerte una experiencia única. Cada detalle está pensado para tu comodidad.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Resto de secciones igual que antes hasta Reservas -->
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+      <h2>Nuestros Servicios</h2>
+      <div class="services-container">
+        <div class="service">
+          <i class="fas fa-wifi"></i>
+          <h3>Wi-Fi Gratuito</h3>
+          <p>Conexión de alta velocidad en toda la propiedad.</p>
+        </div>
+        <!-- Más servicios... -->
+      </div>
+    </section>
 
-    <!-- Reservas modificado -->
+    <!-- Fiestas de Badajoz -->
+    <section id="fiestas-badajoz" class="services">
+      <h2>Fiestas de Badajoz</h2>
+      <div class="services-container">
+        <a href="https://es.wikipedia.org/wiki/Carnaval_de_Badajoz" target="_blank" class="service">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Carnaval</h3>
+          <p>El carnaval más famoso de Extremadura.</p>
+        </a>
+        <!-- Más fiestas... -->
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="gallery">
+      <h2>Galería</h2>
+      <div class="gallery-container">
+        <img src="imagenes/casa1.jpg" alt="Interior 1" onclick="openModal(this.src)">
+        <img src="imagenes/casa2.jpg" alt="Interior 1" onclick="openModal(this.src)">
+        <img src="imagenes/casa3.jpg" alt="Interior 1" onclick="openModal(this.src)">
+        <img src="imagenes/casa4.jpg" alt="Interior 1" onclick="openModal(this.src)"><!-- Más imágenes... -->
+        <img src="imagenes/casa5.jpg" alt="Interior 1" onclick="openModal(this.src)">
+        <img src="imagenes/casa6.jpg" alt="Interior 1" onclick="openModal(this.src)">
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="location">
+      <h2>Ubicación</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3073.297413815047!2d-6.970754423465343!3d38.878377371643595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd16f7b1a69c8b9d%3A0x4cd47999aa12a98d!2sC.%20la%20Bomba%2C%208%2C%2006002%20Badajoz!5e0!3m2!1ses!2ses!4v1710187650341!5m2!1ses!2ses" 
+        allowfullscreen loading="lazy"></iframe>
+    </section>
+
+    <!-- Reservas -->
     <section id="reservas" class="reservas">
       <h2>Reservas</h2>
       <div class="reservas-container">
         <form id="booking-form">
           <div class="form-group">
-            <label for="checkin">Fecha de Llegada:</label>
-            <input type="date" id="checkin" name="checkin" required>
+            <label for="checkin">Llegada:</label>
+            <input type="date" id="checkin" required>
           </div>
           <div class="form-group">
-            <label for="checkout">Fecha de Salida:</label>
-            <input type="date" id="checkout" name="checkout" required>
+            <label for="checkout">Salida:</label>
+            <input type="date" id="checkout" required>
           </div>
           <div class="price-summary">
-            <h3>Resumen de precios</h3>
-            <p>Noches entre semana (L-J): <span id="weekdays">0</span> x €50 = <span id="weekdays-total">€0</span></p>
-            <p>Noches fin de semana (V-D): <span id="weekends">0</span> x €100 = <span id="weekends-total">€0</span></p>
+            <h3>Total:</h3>
+            <p>Noches entre semana: <span id="weekdays">0</span> × €50 = <span id="weekdays-total">€0</span></p>
+            <p>Noches fin de semana: <span id="weekends">0</span> × €100 = <span id="weekends-total">€0</span></p>
             <h4>Total: <span id="total-price">€0</span></h4>
           </div>
-          <button type="submit" class="button">Continuar al pago</button>
+          <button type="submit" class="button">Reservar</button>
         </form>
-        <div id="payment-modal" class="payment-modal">
-          <div class="payment-content">
-            <h3>Pago seguro</h3>
-            <div class="card-details">
-              <input type="text" placeholder="Número de tarjeta" required>
-              <input type="text" placeholder="MM/AA" required>
-              <input type="text" placeholder="CVV" required>
-            </div>
-            <button onclick="processPayment()" class="button">Pagar ahora</button>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Resto de secciones igual que antes -->
-
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/xqkrbvjn" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+        <button type="submit" class="button">Enviar</button>
+      </form>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 La Casa de Eva. Todos los derechos reservados.</p>
+    <p>© 2024 La Casa de Eva</p>
   </footer>
 
-  <!-- Modal para imágenes -->
+  <!-- Modales -->
   <div id="imageModal" class="image-modal">
-    <div class="image-modal-content">
-      <button class="close" aria-label="Cerrar" onclick="closeModal()">&times;</button>
-      <img id="modalImage" src="" alt="Imagen ampliada">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" alt="Vista ampliada">
+    </div>
+  </div>
+
+  <div id="paymentModal" class="payment-modal">
+    <div class="payment-content">
+      <h3>Pago seguro</h3>
+      <input type="text" placeholder="Número de tarjeta" required>
+      <input type="text" placeholder="MM/AA" required>
+      <input type="text" placeholder="CVV" required>
+      <button onclick="processPayment()" class="button">Pagar €<span id="final-price">0</span></button>
     </div>
   </div>
 
