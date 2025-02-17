@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Cálculo de precio según los días seleccionados
+  // Cálculo de precio
   document.getElementById("calculate").addEventListener("click", function () {
     const checkIn = new Date(document.getElementById("check-in").value);
     const checkOut = new Date(document.getElementById("check-out").value);
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     while (currentDate < checkOut) {
       let day = currentDate.getDay();
-      total += (day >= 1 && day <= 4) ? 50 : 100; // Lunes a Jueves: 50€, Viernes a Domingo: 100€
+      total += (day >= 1 && day <= 4) ? 50 : 100;
       currentDate.setDate(currentDate.getDate() + 1);
     }
 
