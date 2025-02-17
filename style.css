@@ -11,7 +11,7 @@ h2 {
   margin: 20px 0;
 }
 
-/* Galería */
+/* Estilos de la galería */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +31,7 @@ h2 {
   transform: scale(1.1);
 }
 
-/* Modal */
+/* Modal de imágenes */
 .modal {
   display: none;
   position: fixed;
@@ -60,7 +60,39 @@ h2 {
   cursor: pointer;
 }
 
-/* Reservas */
+/* Sección de Fiestas */
+.festivities-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.festivity {
+  text-align: center;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.festivity:hover {
+  transform: scale(1.05);
+}
+
+.festivity img {
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.festivity h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Sección de Reservas */
 .reservation {
   text-align: center;
   background: white;
@@ -72,6 +104,7 @@ h2 {
   margin: 10px auto;
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 #price {
@@ -92,4 +125,18 @@ h2 {
   margin-bottom: 10px;
   padding: 8px;
   font-size: 16px;
+  border-radius: 5px;
+}
+
+.contact button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact button:hover {
+  background: #0056b3;
 }
