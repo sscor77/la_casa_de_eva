@@ -120,9 +120,7 @@
       <h2>Fiestas más importantes de Badajoz</h2>
       <div class="services-container">
         <div class="service">
-          <a href="https://www.cuandopasa.com/index.php?v=v54325b" target="_blank" rel="noopener noreferrer">
-            <img src="imagenes/carnaval.jpg" alt="Carnaval de Badajoz">
-          </a>
+          <i class="fas fa-calendar-alt"></i>
           <h3>Carnaval de Badajoz</h3>
           <p>Uno de los carnavales más famosos de España, lleno de color, música y disfraces.</p>
         </div>
@@ -143,12 +141,12 @@
     <section id="galeria" class="gallery">
       <h2>Galería de Fotos</h2>
       <div class="gallery-container">
-        <img src="imagenes/casa1.jpg" alt="Sala de estar decorada" onclick="openModal(this.src)">
-        <img src="imagenes/casa2.jpg" alt="Sala de estar del apartamento" onclick="openModal(this.src)">
-        <img src="imagenes/casa3.jpg" alt="Sala moderna" onclick="openModal(this.src)">
-        <img src="imagenes/casa4.jpg" alt="Baño moderno" onclick="openModal(this.src)">
-        <img src="imagenes/casa5.jpg" alt="Dormitorio moderno" onclick="openModal(this.src)">
-        <img src="imagenes/casa6.jpg" alt="Cocina moderna en blanco" onclick="openModal(this.src)">
+        <img src="imagenes/casa1.jpg" alt="Casa 1" onclick="openModal(this.src)">
+        <img src="imagenes/casa2.jpg" alt="Casa 2" onclick="openModal(this.src)">
+        <img src="imagenes/casa3.jpg" alt="Casa 3" onclick="openModal(this.src)">
+        <img src="imagenes/casa4.jpg" alt="Casa 4" onclick="openModal(this.src)">
+        <img src="imagenes/casa5.jpg" alt="Casa 5" onclick="openModal(this.src)">
+        <img src="imagenes/casa6.jpg" alt="Casa 6" onclick="openModal(this.src)">
       </div>
     </section>
 
@@ -193,10 +191,10 @@
     <section id="contacto" class="contact">
       <h2>Contacto</h2>
       <div class="contact-container">
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="hidden" name="_next" value="http://example.com/thankyou.html">
-          <input type="hidden" name="_subject" value="New submission!">
-          <input type="hidden" name="_cc" value="pedrocordobez@hotmail.com">
+        <form action="https://formspree.io/f/xldgolna" method="POST">
+            <input type="hidden" name="_next" value="http://example.com/thankyou.html">
+            <input type="hidden" name="_subject" value="New submission!">
+            <input type="hidden" name="_cc" value="pedrocordobez@hotmail.com">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -213,6 +211,40 @@
         </form>
       </div>
     </section>
+
+    <!-- Sección de Reseñas y Testimonios -->
+    <section id="testimonios" class="testimonios">
+      <h2>Reseñas y Testimonios</h2>
+      <div class="testimonios-container">
+        <div class="testimonial">
+          <p>"La experiencia en La Casa de Eva fue inolvidable. El servicio y la atención fueron excepcionales."</p>
+          <h3>- María Pérez</h3>
+        </div>
+        <div class="testimonial">
+          <p>"Un lugar encantador, perfecto para relajarse y disfrutar de unas vacaciones únicas. ¡Altamente recomendado!"</p>
+          <h3>- Juan García</h3>
+        </div>
+        <div class="testimonial">
+          <p>"Todo estaba impecable y el ambiente te hace sentir como en casa. Sin duda volveré."</p>
+          <h3>- Ana Rodríguez</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Video Interactivo -->
+    <section id="video-interactivo" class="video-interactivo">
+      <h2>Tour Virtual Interactivo</h2>
+      <div class="video-container">
+        <video id="tourVideo" controls>
+          <source src="path/to/your-video.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="video-overlay">
+          <button onclick="window.location.href='#reservas'" class="button">¡Reserva Ahora!</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
